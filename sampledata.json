@@ -1,0 +1,28 @@
+{
+    "users":[
+        {
+            "name": "Fergus",
+            "surname": "Smith"
+        },
+        {
+            "name": "Shaun",
+            "surname": "Coins"
+        },
+        {
+            "name": "Hugo",
+            "surname": "Bear"
+        },
+        {
+            "name": "Bowie",
+            "surname": "Taylor"
+        },
+        {
+            "name": "Sophie",
+            "surname": "Driver"
+        },
+        {
+            "name": "Steven",
+            "surname": "Kerb"
+        }
+    ]
+}

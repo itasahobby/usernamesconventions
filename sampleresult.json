@@ -1,0 +1,142 @@
+{
+    "users": [
+        {
+            "name": "Fergus",
+            "surname": "Smith",
+            "usernames": [
+                "Fergus_Smith\n",
+                "Fergus.Smith\n",
+                "Fergus\n",
+                "Smith\n",
+                "FSmith\n",
+                "FergusS\n",
+                "FergusSmith\n",
+                "SmithFergus\n",
+                "Smith.Fergus\n",
+                "Smith_Fergus\n",
+                "Fergus-Smith\n",
+                "F-Smith\n",
+                "Fergus-S\n",
+                "F.Smith\n",
+                "Fergus.S\n",
+                "F_Smith\n",
+                "Fergus_S"
+            ]
+        },
+        {
+            "name": "Shaun",
+            "surname": "Coins",
+            "usernames": [
+                "Shaun_Coins\n",
+                "Shaun.Coins\n",
+                "Shaun\n",
+                "Coins\n",
+                "SCoins\n",
+                "ShaunC\n",
+                "ShaunCoins\n",
+                "CoinsShaun\n",
+                "Coins.Shaun\n",
+                "Coins_Shaun\n",
+                "Shaun-Coins\n",
+                "S-Coins\n",
+                "Shaun-C\n",
+                "S.Coins\n",
+                "Shaun.C\n",
+                "S_Coins\n",
+                "Shaun_C"
+            ]
+        },
+        {
+            "name": "Hugo",
+            "surname": "Bear",
+            "usernames": [
+                "Hugo_Bear\n",
+                "Hugo.Bear\n",
+                "Hugo\n",
+                "Bear\n",
+                "HBear\n",
+                "HugoB\n",
+                "HugoBear\n",
+                "BearHugo\n",
+                "Bear.Hugo\n",
+                "Bear_Hugo\n",
+                "Hugo-Bear\n",
+                "H-Bear\n",
+                "Hugo-B\n",
+                "H.Bear\n",
+                "Hugo.B\n",
+                "H_Bear\n",
+                "Hugo_B"
+            ]
+        },
+        {
+            "name": "Bowie",
+            "surname": "Taylor",
+            "usernames": [
+                "Bowie_Taylor\n",
+                "Bowie.Taylor\n",
+                "Bowie\n",
+                "Taylor\n",
+                "BTaylor\n",
+                "BowieT\n",
+                "BowieTaylor\n",
+                "TaylorBowie\n",
+                "Taylor.Bowie\n",
+                "Taylor_Bowie\n",
+                "Bowie-Taylor\n",
+                "B-Taylor\n",
+                "Bowie-T\n",
+                "B.Taylor\n",
+                "Bowie.T\n",
+                "B_Taylor\n",
+                "Bowie_T"
+            ]
+        },
+        {
+            "name": "Sophie",
+            "surname": "Driver",
+            "usernames": [
+                "Sophie_Driver\n",
+                "Sophie.Driver\n",
+                "Sophie\n",
+                "Driver\n",
+                "SDriver\n",
+                "SophieD\n",
+                "SophieDriver\n",
+                "DriverSophie\n",
+                "Driver.Sophie\n",
+                "Driver_Sophie\n",
+                "Sophie-Driver\n",
+                "S-Driver\n",
+                "Sophie-D\n",
+                "S.Driver\n",
+                "Sophie.D\n",
+                "S_Driver\n",
+                "Sophie_D"
+            ]
+        },
+        {
+            "name": "Steven",
+            "surname": "Kerb",
+            "usernames": [
+                "Steven_Kerb\n",
+                "Steven.Kerb\n",
+                "Steven\n",
+                "Kerb\n",
+                "SKerb\n",
+                "StevenK\n",
+                "StevenKerb\n",
+                "KerbSteven\n",
+                "Kerb.Steven\n",
+                "Kerb_Steven\n",
+                "Steven-Kerb\n",
+                "S-Kerb\n",
+                "Steven-K\n",
+                "S.Kerb\n",
+                "Steven.K\n",
+                "S_Kerb\n",
+                "Steven_K"
+            ]
+        }
+    ]
+}

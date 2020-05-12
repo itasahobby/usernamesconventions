@@ -1,0 +1,17 @@
+&name_&surname
+&name.&surname
+&name
+&surname
+&n&surname
+&name&s
+&name&surname
+&surname&name
+&surname.&name
+&surname_&name
+&name-&surname
+&n-&surname
+&name-&s
+&n.&surname
+&name.&s
+&n_&surname
+&name_&s
