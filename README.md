@@ -51,6 +51,8 @@ You can add your own convention rulset or substitute the default one with the fo
 The example above is assuming that the separator being used is the default one (&). 
 Currently there are the following rules implemented:
 * &name -> Name
+* &1name -> First name (from 1 to 9, if it doesn't have it skips the rule)
 * &surname -> Surname
+* &1surname -> First surname (from 1 to 9, if it doesn't have it skips the rule)
 * &n -> Name's first letter
 * &s -> Surname first letter 

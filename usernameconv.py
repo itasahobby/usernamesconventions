@@ -1,5 +1,6 @@
 import json
 import argparse
+import re
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Generates a wordlist of usernames according to different conventions for the given name and surname")
@@ -30,18 +31,33 @@ def get_conventions(separator):
         f"{separator}n.{separator}surname",
         f"{separator}name.{separator}s",
         f"{separator}n_{separator}surname",
-        f"{separator}name_{separator}s"
+        f"{separator}name_{separator}s",
+        f"{separator}name.{separator}1surname.{separator}2surname"
     ]
+
+def validate_conv(user,convention):
+    if(not re.findall(r"\$\d",convention)):
+        return True
+    name_length = len(user["name"].split())
+    surname_length = len(user["surname"].split())
+    max_name = max(n.replace("$","")[0] for n in re.findall(r"\$\dname",convention))
+    max_surname = max(n.replace("$","")[0] for n in re.findall(r"\$\dsurname",convention))
+    return max_name > name_length and max_surname > surname_length 
+
 
 def generate(user,conventions,separator):
     results = []
+    
     for convention in conventions:
-        result = convention
-        result = result.replace(f"{separator}name",user["name"])
-        result = result.replace(f"{separator}n",user["name"][0])
-        result = result.replace(f"{separator}surname",user["surname"])
-        result = result.replace(f"{separator}s",user["surname"][0])
-        results += [result]
+        if validate_conv(user,convention):
+            result = convention
+            result = result.replace(f"{separator}name","".join(user["name"].split()))
+            result = result.replace(f"{separator}n",user["name"][0])
+            result = result.replace(f"{separator}surname","".join(user["surname"].split()))
+            result = result.replace(f"{separator}s",user["surname"][0])
+            result = result.replace(f"{separator}1surname",user["surname"].split()[0])
+            result = result.replace(f"{separator}2surname","".join(user["surname"].split()[1:]))
+            results += [result]
     return results
 
 def read_conventions(filename):
@@ -54,7 +70,7 @@ def read_conventions(filename):
 
 def write_list(filedescr,datalist):
     for element in datalist:
-        filedescr.write(f"{element}")
+        filedescr.write(f"{element}\n")
 
 def main():
     parser = get_parser()
