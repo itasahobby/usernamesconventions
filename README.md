@@ -22,23 +22,24 @@
 	 ``` 
 3. Program sintaxis:
 	```
-	usage: usernameconv.py [-h] [-i INPUT_FILE] [-o OUTPUT_FILE] [-j] [-s CONVENTIONS] [-a CONVENTIONS] [-S SEPARATOR]
+	usage: usernameconv.py [-h] [-j] [-s CONVENTIONS | -a CONVENTIONS] [-S SEPARATOR] -i INPUT_FILE -o OUTPUT_FILE
 
 	Generates a wordlist of usernames according to different conventions for the given name and surname
 
 	optional arguments:
-	  -h, --help            show this help message and exit
-	  -i INPUT_FILE, --input-file INPUT_FILE
-	                        Input json file
-	  -o OUTPUT_FILE, --output-file OUTPUT_FILE
-	                        Output json file
-	  -j, --output-json     The output is generated as a json file instead of a wordlist
-	  -s CONVENTIONS, --substitute-conventions CONVENTIONS
-	                        Specify a file with custom conventions and substitute them all
-	  -a CONVENTIONS, --add-conventions CONVENTIONS
-	                        Specify a file with custom conventions and add them to default ones
-	  -S SEPARATOR, --set-separator SEPARATOR
-	                        Specify a custom separator used for conventions
+	-h, --help            show this help message and exit
+	-j, --output-json     The output is generated as a json file instead of a wordlist
+	-s CONVENTIONS, --substitute-conventions CONVENTIONS	Specify a file with custom conventions and substitute them all
+	-a CONVENTIONS, --add-conventions CONVENTIONS	Specify a file with custom conventions and add them to default ones
+	-S SEPARATOR, --set-separator SEPARATOR	Specify a custom separator used for conventions
+	-i INPUT_FILE, --input-file INPUT_FILE	Input json file
+	-h, --help            show this help message and exit
+	-j, --output-json     The output is generated as a json file instead of a wordlist
+	-s CONVENTIONS, --substitute-conventions CONVENTIONS	Specify a file with custom conventions and substitute them all
+	-a CONVENTIONS, --add-conventions CONVENTIONS	Specify a file with custom conventions and add them to default ones
+	-S SEPARATOR, --set-separator SEPARATOR	Specify a custom separator used for conventions
+	-i INPUT_FILE, --input-file INPUT_FILE	Input json file
+	-o OUTPUT_FILE, --output-file OUTPUT_FILE	Output json file
 	```
 	> Notes: The default separator is &, if you are using your own convention rulset with a different one this parameter should be used to avoid errors or bad results.
 	
