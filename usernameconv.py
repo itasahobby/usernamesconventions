@@ -36,20 +36,24 @@ def get_conventions(separator):
     ]
 
 def validate_conv(user,convention):
-    if(not re.findall(r"\$\d",convention)):
+    if(not re.findall(r"\&\d",convention)):
         return True
     name_length = len(user["name"].split())
     surname_length = len(user["surname"].split())
-    max_name = max(n.replace("$","")[0] for n in re.findall(r"\$\dname",convention))
-    max_surname = max(n.replace("$","")[0] for n in re.findall(r"\$\dsurname",convention))
-    return max_name > name_length and max_surname > surname_length 
+    try: 
+        max_name = max(n.replace("$","")[0] for n in re.findall(r"\$\dname",convention))
+        max_surname = max(n.replace("$","")[0] for n in re.findall(r"\$\dsurname",convention))
+    except:
+        max_name = 1
+        max_surname = 1
+    return (name_length > max_name) and (surname_length > max_surname) 
 
 
 def generate(user,conventions,separator):
     results = []
     
     for convention in conventions:
-        if validate_conv(user,convention):
+        if(validate_conv(user, convention)):
             result = convention
             result = result.replace(f"{separator}name","".join(user["name"].split()))
             result = result.replace(f"{separator}n",user["name"][0])
