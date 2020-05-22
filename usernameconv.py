@@ -35,32 +35,39 @@ def get_conventions(separator):
         f"{separator}name.{separator}1surname.{separator}2surname"
     ]
 
-def validate_conv(user,convention):
-    if(not re.findall(r"\&\d",convention)):
+def validate_conv(user,convention,separator):
+    if(not re.findall(fr"\{separator}\d",convention)):
         return True
     name_length = len(user["name"].split())
     surname_length = len(user["surname"].split())
     try: 
-        max_name = max(n.replace("$","")[0] for n in re.findall(r"\$\dname",convention))
-        max_surname = max(n.replace("$","")[0] for n in re.findall(r"\$\dsurname",convention))
+        max_name = int(max(n.replace(separator,"")[0] for n in re.findall(fr"\{separator}\dname",convention)))
     except:
         max_name = 1
+    try:
+        max_surname = int(max(n.replace(separator,"")[0] for n in re.findall(fr"\{separator}\dsurname",convention)))
+    except:
         max_surname = 1
-    return (name_length > max_name) and (surname_length > max_surname) 
-
+    return (name_length >= max_name) and (surname_length >= max_surname) 
 
 def generate(user,conventions,separator):
     results = []
     
     for convention in conventions:
-        if(validate_conv(user, convention)):
+        if(validate_conv(user, convention,separator)):
             result = convention
             result = result.replace(f"{separator}name","".join(user["name"].split()))
             result = result.replace(f"{separator}n",user["name"][0])
             result = result.replace(f"{separator}surname","".join(user["surname"].split()))
             result = result.replace(f"{separator}s",user["surname"][0])
-            result = result.replace(f"{separator}1surname",user["surname"].split()[0])
-            result = result.replace(f"{separator}2surname","".join(user["surname"].split()[1:]))
+            name_matches = re.findall(fr"\{separator}\dname",convention)
+            surname_matches = re.findall(fr"\{separator}\dsurname",convention)
+            for match in name_matches:
+                index = int(convention[convention.index(match) + 1])
+                result = result.replace(f"{separator}{index}surname",user["surname"].split()[index - 1])
+            for match in surname_matches:
+                index = int(convention[convention.index(match) + 1])
+                result = result.replace(f"{separator}{index}surname","".join(user["surname"].split()[index - 1]))
             results += [result]
     return results
 
